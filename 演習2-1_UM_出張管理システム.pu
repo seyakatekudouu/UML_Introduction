@@ -8,7 +8,6 @@ rectangle 図書館システム {
 usecase 出張申請を登録する 
 usecase 出張申請を提出する
 usecase 出張申請を承認する
-usecase 出張申請を却下する
 usecase 出張申請を差し戻す
 usecase 出張申請を確認する
 }
