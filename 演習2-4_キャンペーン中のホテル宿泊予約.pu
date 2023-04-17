@@ -1,0 +1,11 @@
+@startuml ユースケース図
+rectangle 予約 {
+    actor 工藤#DDDDDD;line:black;line.bold;
+usecase (<u>キャンペーン</u>\n拡張点\nキャンペーン中) as input
+usecase ログインする
+usecase 予約する
+}
+input <. (ログインする) : <<extend>>
+ログインする<.予約する: << include >>
+ログインする <-- 工藤
+@enduml
