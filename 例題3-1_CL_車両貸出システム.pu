@@ -1,32 +1,35 @@
 @startuml
 ' skinparam classAttributeIconSize 0
 class 空車リスト {
-- 属性1:int
+- 管理番号:String
 
 }
 class 車 {
-- 属性1:int  
-- 属性2:String 
-- 属性3:String  
+- 管理番号:int  
+- 車種:String 
+- 駆動方式:String  
 }
 class 顧客 {
-- 属性1:String
-- 属性2:String
-- 属性3:String
-- 属性4:String
+- 顧客ID:String
+- 氏名:String
+- 電話番号:String
+- 郵便番号:String
+- 住所:String
+---
++ setName(氏名:String) void
 }
 class 予約 {
-- 属性1:int 
-- 属性2:int 
-- 属性3:String 
-- 属性4:int
+- 予約番号:String
+- 管理番号:String 
+- 顧客ID:String 
+- 予約日:String
 }
 
 class 貸し出し {
-- 属性1:int 
-- 属性2:int 
-- 属性3:String 
-- 属性4:int
+- 貸し出し番号:String 
+- 管理番号:String 
+- 顧客ID:String 
+- 予約日:String
 
 }
 hide 空車リスト circle
