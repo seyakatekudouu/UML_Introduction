@@ -1,0 +1,28 @@
+@startuml
+' skinparam classAttributeIconSize 0
+class 空車リスト {
+- 属性1:int
+ 属性2:String
+}
+class 車 {
+- 属性1:String  
+- 属性2:String  
+}
+class 顧客 {
+- 属性1:String
+- 属性2:String
+}
+class 予約 {
+- 属性1:int
+}
+
+class 貸し出し {
+- 属性1:String
+}
+hide 空車リスト circle
+hide 車 circle
+hide 顧客 circle
+hide 予約 circle
+hide 貸し出し circle
+
+@enduml
