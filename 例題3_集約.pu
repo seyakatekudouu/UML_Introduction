@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+' 会員リストo-- 会員
+' note right of 会員リスト
+' 会員クラスがなくて成り立つ
+' end note
+
+' left to right direction
+' パソコン"1" *-- ハードディスク
+' note right of パソコン
+' ハードディスクがないと成り立ちません。
+' end note
+' 会社 o-- 社員
+' 社員 *-- 社員証
+
+' left to right direction
+' 注文<.. 注文管理
+' note top of 注文管理
+' 注文管理が注文のメソッドもしくは属性を呼び出している
+' endnote
+
+class 社員{
+- 社員ID
+- 社員名
+---
++ 社員ID設定（社員ID:int）:void
++ 社員ID取得（）:int
++ 社員名設定（社員名:String）:void
++ 社員名取得（）:String
+}
+class 技術社員{
+- プロジェクト名:String
+---
++ プロジェクト名設定（プロジェクト名:String）:void
++ プロジェクト名取得（）:String
+}
+class 営業社員{
+- 担当地域名:String
+---
++ 担当地域名設定（プロジェクト名:String）:void
++ 担当地域名取得（）:String
+}
+' 社員<|--down- 技術社員
+' 社員<|--down- 営業社員
+
+技術社員 -down-|> 社員
+営業社員 -down-|>社員
+
+@enduml
