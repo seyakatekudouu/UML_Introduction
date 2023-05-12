@@ -1,0 +1,20 @@
+@startuml 資格取得
+object "資格取得申請:資格" as  a{
+名称=情報処理安全確保支援士
+日付=2020年10/21
+}
+object "利用者:社員" as b {
+氏名=高橋洋平
+}
+object "利用者:社員" as c {
+氏名=樋口正之
+}
+
+object "資格申請:資格" as  d{
+名称=LinuC試験Level1
+日付=2021年3/28
+}
+b -- a
+c -- a
+b -- d
+@enduml
