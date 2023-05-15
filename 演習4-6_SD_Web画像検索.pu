@@ -1,0 +1,27 @@
+@startuml Web画像検索
+hide footbox
+skinparam style strictuml
+Actor ユーザー as user
+participant ":ブラウザ" as browser
+participant ":Webサーバー" as web
+participant ":画像サーバー" as server
+
+activate user
+user -> browser : 閲覧画像情報()
+activate browser
+browser -> web : 画像検索()
+activate web
+web -> server : 画像情報確認()
+activate server
+server -->> web : 画像情報
+deactivate server
+
+web -->> browser : 画像情報
+deactivate web
+
+browser -> browser : 画像ファイルの再生
+activate browser
+deactivate browser
+deactivate browser
+
+@enduml

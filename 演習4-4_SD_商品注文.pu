@@ -1,0 +1,24 @@
+@startuml 商品注文
+    hide footbox
+    Actor 受注係 as human
+    participant "商品登録" as boundary <<boundary>>
+    participant "商品" as entity1 <<entity>>
+    activate human
+    human -> boundary
+        activate boundary
+            activate entity1
+        boundary -> entity1 : 商品情報を確認する
+            boundary <<-- entity1 : 商品情報を返す
+            deactivate entity1
+        boundary -> boundary
+        activate boundary
+        deactivate boundary
+        deactivate boundary
+    human -> boundary
+    activate boundary
+    create "注文" as entity <<entity>>
+    boundary -->> entity : <<生成する>>
+    deactivate human
+        activate entity
+        deactivate entity
+@enduml
