@@ -1,0 +1,16 @@
+@startuml ステートマシン図
+left to right direction
+state 電源ON {
+    state 右旋回{
+    }
+    state 左旋回{
+    }
+}
+state 電源OFF
+
+電源OFF --> 電源ON : スイッチを入れる
+右旋回 --> 左旋回 : 光センサーがラインから外れる
+左旋回 --> 右旋回 : 光センサーがライン上にある
+
+電源ON --> 電源OFF : スイッチを切る
+@enduml
